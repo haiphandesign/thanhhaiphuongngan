@@ -106,7 +106,7 @@ body {
 
 .hn-hero {
     position: relative;
-    margin-top: -5vw;
+    margin-top: -10vw;
     margin-left: -5vw;
     text-align: right;
 
@@ -142,7 +142,7 @@ body {
     position: relative;
     z-index: 3;
 
-    margin-top: 10vw;
+    margin-top: 15vw;
 
     @include breakpoint(md) {
         margin-top: -25vw;
@@ -152,7 +152,7 @@ body {
     .hn-story-title {
         font-size: 10vw;
         line-height: 1;
-        margin-bottom: 8vw;
+        margin-bottom: 10vw;
 
         @include breakpoint(md) {
             font-size: 5vw;
@@ -172,6 +172,133 @@ body {
 
         @include breakpoint(md) {
             grid-gap: 3vw;
+        }
+    }
+}
+
+.hn-albums {
+    position: relative;
+    margin-top: 20vw;
+    margin-bottom: 10vw;
+
+    @include breakpoint(md) {
+        margin-top: -7.5vw;
+    }
+
+    .hn-albums-title {
+        font-size: 10vw;
+        line-height: 1;
+        margin-bottom: 7.5vw;
+
+        @include breakpoint(md) {
+            font-size: 5vw;
+            margin-bottom: 5vw;
+            text-align: right;
+        }
+    }
+
+    .hn-albums-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5vw;
+
+        @include breakpoint(sm) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .hn-album {
+        position: relative;
+        width: 100%;
+
+        &:nth-child(2n) {
+            transform: rotate(-2deg);
+        }
+
+        &:nth-child(2n+1) {
+            transform: rotate(3deg);
+        }
+
+        &:nth-child(3n+1) {
+            transform: rotate(1deg);
+        }
+
+        &:nth-child(1) {
+            transform: rotate(3deg);
+        }
+
+        .hn-album-frame {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hn-album-image {
+            position: absolute;
+            top: 12.5%;
+            left: 50%;
+
+            width: 80%;
+
+            transform: translateX(-50%);
+        }
+
+        .hn-album-name {
+            position: absolute;
+            bottom: 10%;
+            z-index: 2;
+
+            width: 100%;
+            text-align: center;
+        }
+
+        .hn-album-spread {
+            position: absolute;
+            top: 0;
+            z-index: -1;
+
+            width: 100%;
+
+            img {
+                position: absolute;
+                top: 0;
+                transition: .25s all ease;
+
+                &:nth-child(1) {
+                    transform: rotate(4deg);
+                }
+
+                &:nth-child(2) {
+                    transform: rotate(-6deg);
+                }
+
+            }
+
+            @include breakpoint(md) {
+                img {
+                    &:nth-child(1) {
+                        transform: rotate(2deg);
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(-3deg);
+                    }
+
+                }
+            }
+        }
+
+        &:hover {
+            .hn-album-spread {
+                img {
+                    &:nth-child(1) {
+                        transform: rotate(4deg);
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(-6deg);
+                    }
+                }
+            }
         }
     }
 }
