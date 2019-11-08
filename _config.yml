@@ -1,0 +1,15 @@
+title: Thanh Hải & Phương Ngân
+email: hai@haiphan.design
+description: >-
+    Just another website by Hải
+baseurl: ''
+url: ''
+twitter_username: jekyllrb
+github_username: jekyll
+
+plugins:
+    - jekyll-feed
+    - jekyll-seo-tag
+
+sass:
+    style: compressed
