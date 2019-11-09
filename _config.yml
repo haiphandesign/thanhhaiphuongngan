@@ -4,8 +4,12 @@ description: >-
     Just another website by Hải
 baseurl: ''
 url: ''
-twitter_username: jekyllrb
-github_username: jekyll
+
+collections:
+    albums:
+        output: true
+        title: Albums
+        permalink: /album/:slug
 
 plugins:
     - jekyll-feed

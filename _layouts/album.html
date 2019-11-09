@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+
+<div class="container is-fluid">
+
+    <a class="hn-album-nav" href="/">
+        &xlarr;<br />
+        Trang Chủ
+    </a>
+
+    <div class="hn-album-single-content">
+        {{ content }}
+    </div>
+
+    <div class="hn-album-single-wrapper">
+            {% capture folderpath %}/assets/albums/{{ page.slug }}/{% endcapture %}
+            {% for file in site.static_files %}
+            {% if file.path contains folderpath %}
+            {% if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' %}{% assign filenameparts = file.path | split: "/" %}{% assign filename = filenameparts | last | replace: file.extname,"" %}
+            <figure class="image">
+                <img src="{{ file.path | relative_url }}" />
+            </figure>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+    </div>
+
+</div>

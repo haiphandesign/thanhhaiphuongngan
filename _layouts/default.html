@@ -10,7 +10,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://git.haiphan.design/harmony/harmony.min.css">
     <link
-        href="https://fonts.googleapis.com/css?family=Cormorant+Infant:400,400i|Montserrat:500&display=swap&subset=vietnamese"
+        href="https://fonts.googleapis.com/css?family=Cormorant+Infant:400,400i,500,500i|Montserrat:500&display=swap&subset=vietnamese"
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
@@ -20,10 +20,43 @@
 
 <body>
 
-
+    <div class="noise is-nonselectable is-click-through"></div>
+    <div class="header-shadow is-nonselectable is-click-through">
+        <img src="/assets/images/overlay-shadow.png">
+    </div>
+    <div class="hn-abstract is-nonselectable is-click-through">
+        <img class="hn-abstract-header" src="/assets/images/abstract-header.png">
+        <img class="hn-abstract-footer" src="/assets/images/abstract-footer.png">
+        {% if page.url == "/" %}
+        <img class="hn-abstract-homepage-01" src="/assets/images/abstract-homepage-01.png">
+        <img class="hn-abstract-homepage-02" src="/assets/images/abstract-homepage-02.png">
+        <img class="hn-abstract-homepage-03" src="/assets/images/abstract-homepage-03.png">
+        {% endif %}
+    </div>
 
     <div id="main">
         {{ content }}
+    </div>
+
+    <div class="container is-fluid">
+        <div class="hn-footer">
+            <div class="hn-contact">
+                <div class="hn-contact-title">Liên hệ</div>
+                <ul>
+                    <li class="is-family-serif hn-footer-text"><a href="https://instagram.com/haiphandesign/">
+                            Thanh Hải
+                        </a></li>
+                    <li class="is-family-serif hn-footer-text"><a href="https://instagram.com/p.n.h.n/">
+                            Phương Ngân
+                        </a></li>
+                </ul>
+            </div>
+            <div class="hn-copyright is-family-serif">
+                <a href="https://haiphan.design/"><span class="is-family-sans-serif">&copy; </span><span
+                        class="hn-footer-text is-italic">Hải</span>.
+                </a>
+            </div>
+        </div>
     </div>
 
 

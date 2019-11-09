@@ -8,7 +8,7 @@ layout: default
     <ul class="hn-nav">
         <li><a href="#story">Câu chuyện<br />của chúng tôi</a></li>
         <li><a href="#media">Hình ảnh<br />— Video</a></li>
-        <li><a href="#guestbook">Gửi<br />lời chúc</a></li>
+        <!-- <li><a href="#guestbook">Gửi<br />lời chúc</a></li> -->
     </ul>
 
     <div class="hn-intro">
@@ -22,7 +22,7 @@ layout: default
         <img src="/assets/images/hn-hero-02.png" alt="">
     </div>
 
-    <div class="hn-story">
+    <div class="hn-story" id="story">
         <div class="hn-story-title is-family-serif">Câu chuyện<br />của chúng tôi</div>
         <div class="hn-story-content">
             <p>Gặp ngau lần đầu tiên sau khi Phương Ngân chuyển đến vào giữa năm nhất cao trung, Thanh Hải và Phương
@@ -36,22 +36,23 @@ layout: default
         </div>
     </div>
 
-    <div class="hn-albums">
-        <div class="hn-albums-title is-family-serif">Hình ảnh<br />& video</div>
+    <div class="hn-albums" id="media">
+        <div class="hn-albums-title is-family-serif">Hình ảnh<br /><span class="is-italic">&</span> Video</div>
         <div class="hn-albums-wrapper">
-            {% for i in (1..4) %}
-            <div class="hn-album">
+            {% assign albums = site.albums | sort: 'priority' %}
+            {% for album in albums %}
+            <a class="hn-album" href="{{ album.url }}">
                 <img class="hn-album-frame" src="/assets/images/frame.png" />
                 <figure class="hn-album-image">
-                    <img src="/assets/images/hn-hero-02.jpg" />
+                    <img src="/assets/albums/{{ album.slug }}.jpg" />
                 </figure>
-                <div class="hn-album-name">Lorem Ipsum</div>
+                <div class="hn-album-name">{{ album.title }}</div>
                 <div class="hn-album-spread">
                     {% for i in (1..2) %}
                     <img src="/assets/images/frame.png" />
                     {% endfor %}
                 </div>
-            </div>
+            </a>
             {% endfor %}
         </div>
     </div>
